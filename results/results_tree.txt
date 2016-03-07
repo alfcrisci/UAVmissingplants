@@ -1,0 +1,5 @@
+[1] "Decision Tree - Table of contigency"
+        prediction_cat
+observed    0    1
+       0 2009   22
+       1   52  159

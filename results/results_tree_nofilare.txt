@@ -1,0 +1,5 @@
+[1] "Decision Tree - Table of contigency"
+              observed
+prediction_cat    0    1
+             0 2019  118
+             1   12   93
