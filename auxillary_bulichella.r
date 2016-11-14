@@ -2,10 +2,10 @@
 # useful functions
 require(sp)
 
-model_primicerio=function(dati_filare,saveplot=FALSE,titlefig,namefig,treshshold=40,span_value=0.25) {
+model_primicerio=function(dati_filare,saveplot=FALSE,titlefig,namefig,treshshold=40) {
   if (length(which(dati_filare$MISSING==1)) == 0) { stop("no missing data!")}
   if (saveplot)   { png(filename = namefig)}
-  model=loess(Area ~ PIANTA,span=span_value,data=as.data.frame(dati_filare))
+  model=loess(Area ~ PIANTA,span=0.25,data=as.data.frame(dati_filare))
   plot(dati_filare$Area,xlab="Indice Filare",ylab="Feature Area")
   points(predict(model),col="red")
   points(dati_filare$MISSING*mean(dati_filare$Area),col="blue")
